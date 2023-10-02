@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA
+    Peça para o programa perguntar ao professor regente o nome dos três candidatos a representante da sala.
+    Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
+    Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
+    */
+
+    const candidato1 = prompt("Qual é o nome do primeiro candidato?").toLowerCase().trim();
+    const candidato2 = prompt("Qual o nome do segundo candidato?").toLowerCase().trim();
+    const candidato3 = prompt("Qual o nome do terceiro candidato?").toLowerCase().trim();
+    const alunos = parseInt(prompt("Quantos alunos tem na sala?"));
+    let candi1 = 0;
+    let candi2 = 0;
+    let candi3 = 0;
+
+    for (let i = 0; i < alunos; i++) {
+        let voto = prompt(`Você vai votar em qual candidato? 1-${candidato1}, 2-${candidato2} ou 3-${candidato3}`).toLowerCase().trim();
+        if (voto == candidato1 || voto == 1) {
+            candi1++;
+        }
+        else if (voto == candidato2 || voto == 2) {
+            candi2++;
+        }
+        else if (voto == candidato3 || voto == 3) {
+            candi3++;
+        }
+        else alert("Candidato inválido");
+    }
+    let porc1 = (candi1 / alunos) * 100;
+    let porc2 = (candi2 / alunos) * 100;
+    let porc3 = (candi3 / alunos) * 100;
+
+    alert(`${candidato1} ficou com ${candi1} votos ${porc1}% dos votos \n ${candidato2} ficou com ${candi2} votos ${porc2}% dos votos \n ${candidato3} ficou com ${candi3} votos ${porc3}% dos votos`);
+</script>
